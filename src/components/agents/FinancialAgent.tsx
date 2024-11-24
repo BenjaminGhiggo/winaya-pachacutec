@@ -37,7 +37,7 @@ export function FinancialAgent() {
 
     try {
       const response = await axios.post(
-        'http://18.191.40.129:80/agente_financiero/',
+        'https://da0d-18-191-40-129.ngrok-free.app/agente_financiero/',
         {
           user_input: messageToSend,
         },

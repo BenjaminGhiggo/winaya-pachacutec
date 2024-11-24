@@ -109,7 +109,11 @@ export function MarketingAgent() {
     };
 
     try {
-      const response = await axios.post('http://18.191.40.129:80/agente_marketing/', payload);
+      const response = await axios.post('https://da0d-18-191-40-129.ngrok-free.app/agente_marketing/', payload, {
+        headers: {
+          'ngrok-skip-browser-warning': 'true', // Encabezado para omitir la advertencia
+        },
+      });
 
       const botMessage = {
         id: Date.now() + 1,

@@ -36,9 +36,17 @@ export function FinancialAgent() {
     setShowSuggestions(false);
 
     try {
-      const response = await axios.post('http://18.191.40.129:80/agente_financiero/', {
-        user_input: messageToSend,
-      });
+      const response = await axios.post(
+        'http://18.191.40.129:80/agente_financiero/',
+        {
+          user_input: messageToSend,
+        },
+        {
+          headers: {
+            'ngrok-skip-browser-warning': 'true', // Encabezado para omitir la advertencia
+          },
+        }
+      );
 
       const botMessage = {
         id: Date.now() + 1,
